@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
-// Abstract class
-abstract class ThreeDObject {
+abstract class ThreedObject {
     abstract double wholeSurfaceArea();
     abstract double volume();
 }
 
-// Box
-class Box extends ThreeDObject {
+
+class Box extends ThreedObject {
     double l, b, h;
 
     Box(double l, double b, double h) {
@@ -25,8 +24,7 @@ class Box extends ThreeDObject {
     }
 }
 
-// Cube
-class Cube extends ThreeDObject {
+class Cube extends ThreedObject {
     double a;
 
     Cube(double a) {
@@ -42,8 +40,7 @@ class Cube extends ThreeDObject {
     }
 }
 
-// Cylinder
-class Cylinder extends ThreeDObject {
+class Cylinder extends ThreedObject {
     double r, h;
 
     Cylinder(double r, double h) {
@@ -60,8 +57,8 @@ class Cylinder extends ThreeDObject {
     }
 }
 
-// Cone
-class Cone extends ThreeDObject {
+
+class Cone extends ThreedObject {
     double r, h;
 
     Cone(double r, double h) {
@@ -70,7 +67,7 @@ class Cone extends ThreeDObject {
     }
 
     double wholeSurfaceArea() {
-        double l = Math.sqrt(r*r + h*h); // slant height
+        double l = Math.sqrt(r*r + h*h); 
         return Math.PI * r * (r + l);
     }
 
@@ -79,11 +76,11 @@ class Cone extends ThreeDObject {
     }
 }
 
-// Main class
+
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ThreeDObject obj;
+        ThreedObject obj;
         System.out.print("Enter l b h for Box: ");
         obj = new Box(sc.nextDouble(), sc.nextDouble(), sc.nextDouble());
         System.out.println("Box Area = " + obj.wholeSurfaceArea());
