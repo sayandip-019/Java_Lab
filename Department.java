@@ -52,7 +52,7 @@ class Student extends Hostel implements Department {
     }
 
     void printData() {
-        System.out.println("\n--- Student Details ---");
+        System.out.println("\n Student Details ");
         System.out.println("Name: " + studentName);
         System.out.println("Regd No: " + regdNo);
         System.out.println("Elective: " + electiveSubject);
